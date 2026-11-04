@@ -1,0 +1,24 @@
+# Start ../api/docker-compose.yml first. It owns the shared lumix-network.
+# .env supplies NEXT_PUBLIC_API_URL to the build (Compose interpolation) and the
+# runtime environment. The URL is inlined at build time, so changes need --build.
+services:
+  analytics:
+    image: lumix-analytics:local
+    container_name: lumix-analytics
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:?Set NEXT_PUBLIC_API_URL in .env}
+    env_file:
+      - .env
+    ports:
+      - "127.0.0.1:3004:3000"
+    restart: unless-stopped
+    networks:
+      - lumix
+
+networks:
+  lumix:
+    name: lumix-network
+    external: true

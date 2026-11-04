@@ -4,6 +4,7 @@ out/
 *.log
 .env*
 !.env.example
+!.env.production
 tsconfig.tsbuildinfo
 .impeccable/review/
 .impeccable/reference/

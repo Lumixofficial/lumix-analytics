@@ -1,0 +1,13 @@
+**/node_modules
+.next
+.git
+.gitignore
+.impeccable
+.env
+.env.*
+*.log
+tsconfig.tsbuildinfo
+Dockerfile
+.dockerignore
+docker-compose.yml
+README.md
