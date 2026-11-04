@@ -1,0 +1,707 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-04T08:28:05.115Z",
+  "title": "Design System: Lumix Analytics",
+  "extensions": {
+    "colorMeta": {
+      "poly-blue": {
+        "role": "primary",
+        "displayName": "Poly Blue",
+        "canonical": "#2e5cff",
+        "oklch": "oklch(55.3% 0.246 265.9)",
+        "source": "Inherited --trade-accent. Single overall-volume line, venue bars, and selection.",
+        "tonalRamp": [
+          "oklch(15.0% 0.246 265.9)",
+          "oklch(26.4% 0.246 265.9)",
+          "oklch(37.9% 0.246 265.9)",
+          "oklch(49.3% 0.246 265.9)",
+          "oklch(60.7% 0.246 265.9)",
+          "oklch(72.1% 0.246 265.9)",
+          "oklch(83.6% 0.246 265.9)",
+          "oklch(95.0% 0.246 265.9)"
+        ]
+      },
+      "poly-blue-deep": {
+        "role": "primary",
+        "displayName": "Deep Poly Blue",
+        "canonical": "#1e48e6",
+        "oklch": "oklch(49.2% 0.241 265.5)",
+        "source": "Inherited: design-system/tokens/primitives.css + themes.css (--trade-blue-600 / --trade-accent-hover.)",
+        "tonalRamp": [
+          "oklch(15.0% 0.241 265.5)",
+          "oklch(26.4% 0.241 265.5)",
+          "oklch(37.9% 0.241 265.5)",
+          "oklch(49.3% 0.241 265.5)",
+          "oklch(60.7% 0.241 265.5)",
+          "oklch(72.1% 0.241 265.5)",
+          "oklch(83.6% 0.241 265.5)",
+          "oklch(95.0% 0.241 265.5)"
+        ]
+      },
+      "instrument-blue": {
+        "role": "secondary",
+        "displayName": "Instrument Blue",
+        "canonical": "#8fa6ff",
+        "oklch": "oklch(74.4% 0.131 271.9)",
+        "source": "Inherited --trade-accent-text. Selected navigation and input caret.",
+        "tonalRamp": [
+          "oklch(15.0% 0.131 271.9)",
+          "oklch(26.4% 0.131 271.9)",
+          "oklch(37.9% 0.131 271.9)",
+          "oklch(49.3% 0.131 271.9)",
+          "oklch(60.7% 0.131 271.9)",
+          "oklch(72.1% 0.131 271.9)",
+          "oklch(83.6% 0.131 271.9)",
+          "oklch(95.0% 0.131 271.9)"
+        ]
+      },
+      "blue-ink": {
+        "role": "primary",
+        "displayName": "Blue Ink",
+        "canonical": "#0f1730",
+        "oklch": "oklch(21.2% 0.051 268.5)",
+        "source": "Inherited: design-system/tokens/primitives.css + themes.css (--trade-blue-950 / --trade-accent-tint.)",
+        "tonalRamp": [
+          "oklch(15.0% 0.051 268.5)",
+          "oklch(26.4% 0.051 268.5)",
+          "oklch(37.9% 0.051 268.5)",
+          "oklch(49.3% 0.051 268.5)",
+          "oklch(60.7% 0.051 268.5)",
+          "oklch(72.1% 0.051 268.5)",
+          "oklch(83.6% 0.051 268.5)",
+          "oklch(95.0% 0.051 268.5)"
+        ]
+      },
+      "positive": {
+        "role": "tertiary",
+        "displayName": "Ledger Green",
+        "canonical": "#35c46a",
+        "oklch": "oklch(72.5% 0.175 151.1)",
+        "source": "Inherited: design-system/tokens/primitives.css + themes.css (--trade-green-500 / --trade-positive.)",
+        "tonalRamp": [
+          "oklch(15.0% 0.175 151.1)",
+          "oklch(26.4% 0.175 151.1)",
+          "oklch(37.9% 0.175 151.1)",
+          "oklch(49.3% 0.175 151.1)",
+          "oklch(60.7% 0.175 151.1)",
+          "oklch(72.1% 0.175 151.1)",
+          "oklch(83.6% 0.175 151.1)",
+          "oklch(95.0% 0.175 151.1)"
+        ]
+      },
+      "positive-tint": {
+        "role": "tertiary",
+        "displayName": "Green Ink",
+        "canonical": "#10241a",
+        "oklch": "oklch(24.0% 0.033 160.8)",
+        "source": "Inherited: design-system/tokens/primitives.css + themes.css (--trade-green-950 / --trade-positive-tint.)",
+        "tonalRamp": [
+          "oklch(15.0% 0.033 160.8)",
+          "oklch(26.4% 0.033 160.8)",
+          "oklch(37.9% 0.033 160.8)",
+          "oklch(49.3% 0.033 160.8)",
+          "oklch(60.7% 0.033 160.8)",
+          "oklch(72.1% 0.033 160.8)",
+          "oklch(83.6% 0.033 160.8)",
+          "oklch(95.0% 0.033 160.8)"
+        ]
+      },
+      "negative": {
+        "role": "tertiary",
+        "displayName": "Signal Red",
+        "canonical": "#f0524b",
+        "oklch": "oklch(65.4% 0.195 26.5)",
+        "source": "Inherited: design-system/tokens/primitives.css + themes.css (--trade-red-500 / --trade-negative.)",
+        "tonalRamp": [
+          "oklch(15.0% 0.195 26.5)",
+          "oklch(26.4% 0.195 26.5)",
+          "oklch(37.9% 0.195 26.5)",
+          "oklch(49.3% 0.195 26.5)",
+          "oklch(60.7% 0.195 26.5)",
+          "oklch(72.1% 0.195 26.5)",
+          "oklch(83.6% 0.195 26.5)",
+          "oklch(95.0% 0.195 26.5)"
+        ]
+      },
+      "negative-tint": {
+        "role": "tertiary",
+        "displayName": "Red Ink",
+        "canonical": "#241214",
+        "oklch": "oklch(20.8% 0.030 12.8)",
+        "source": "Inherited: design-system/tokens/primitives.css + themes.css (--trade-red-950 / --trade-negative-tint.)",
+        "tonalRamp": [
+          "oklch(15.0% 0.030 12.8)",
+          "oklch(26.4% 0.030 12.8)",
+          "oklch(37.9% 0.030 12.8)",
+          "oklch(49.3% 0.030 12.8)",
+          "oklch(60.7% 0.030 12.8)",
+          "oklch(72.1% 0.030 12.8)",
+          "oklch(83.6% 0.030 12.8)",
+          "oklch(95.0% 0.030 12.8)"
+        ]
+      },
+      "warning": {
+        "role": "tertiary",
+        "displayName": "Pending Amber",
+        "canonical": "#ffba00",
+        "oklch": "oklch(83.1% 0.171 81.5)",
+        "source": "Inherited: design-system/tokens/primitives.css + themes.css (--trade-amber-500 / --trade-warning.)",
+        "tonalRamp": [
+          "oklch(15.0% 0.171 81.5)",
+          "oklch(26.4% 0.171 81.5)",
+          "oklch(37.9% 0.171 81.5)",
+          "oklch(49.3% 0.171 81.5)",
+          "oklch(60.7% 0.171 81.5)",
+          "oklch(72.1% 0.171 81.5)",
+          "oklch(83.6% 0.171 81.5)",
+          "oklch(95.0% 0.171 81.5)"
+        ]
+      },
+      "on-accent": {
+        "role": "neutral",
+        "displayName": "On Accent",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "source": "Inherited: design-system/tokens/themes.css (--trade-action-primary-fg.)",
+        "tonalRamp": [
+          "#0a0a0b",
+          "#141416",
+          "#1c1c1f",
+          "#2a2a2d",
+          "#6e6e73",
+          "#85858b",
+          "#a1a1a6",
+          "#f4f4f5"
+        ]
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Canvas Black",
+        "canonical": "#0a0a0b",
+        "oklch": "oklch(14.5% 0.002 286.1)",
+        "source": "Inherited: design-system/tokens/primitives.css + themes.css (--trade-gray-950 / --trade-bg-canvas.)",
+        "tonalRamp": [
+          "#0a0a0b",
+          "#141416",
+          "#1c1c1f",
+          "#2a2a2d",
+          "#6e6e73",
+          "#85858b",
+          "#a1a1a6",
+          "#f4f4f5"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Panel Graphite",
+        "canonical": "#141416",
+        "oklch": "oklch(19.2% 0.004 286.0)",
+        "source": "Inherited: design-system/tokens/primitives.css + themes.css (--trade-gray-900 / --trade-bg-surface.)",
+        "tonalRamp": [
+          "#0a0a0b",
+          "#141416",
+          "#1c1c1f",
+          "#2a2a2d",
+          "#6e6e73",
+          "#85858b",
+          "#a1a1a6",
+          "#f4f4f5"
+        ]
+      },
+      "raised": {
+        "role": "neutral",
+        "displayName": "Raised Graphite",
+        "canonical": "#1c1c1f",
+        "oklch": "oklch(22.8% 0.006 285.9)",
+        "source": "Inherited: design-system/tokens/primitives.css + themes.css (--trade-gray-875 / --trade-bg-raised.)",
+        "tonalRamp": [
+          "#0a0a0b",
+          "#141416",
+          "#1c1c1f",
+          "#2a2a2d",
+          "#6e6e73",
+          "#85858b",
+          "#a1a1a6",
+          "#f4f4f5"
+        ]
+      },
+      "raised-hover": {
+        "role": "neutral",
+        "displayName": "Raised Hover",
+        "canonical": "#222226",
+        "oklch": "oklch(25.4% 0.007 285.9)",
+        "source": "Inherited: design-system/tokens/themes.css (--trade-secondary-hover.)",
+        "tonalRamp": [
+          "#0a0a0b",
+          "#141416",
+          "#1c1c1f",
+          "#2a2a2d",
+          "#6e6e73",
+          "#85858b",
+          "#a1a1a6",
+          "#f4f4f5"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#2a2a2d",
+        "oklch": "oklch(28.6% 0.005 286.1)",
+        "source": "Inherited: design-system/tokens/primitives.css + themes.css (--trade-gray-800 / --trade-border-subtle and --trade-border-default (identical in dark).)",
+        "tonalRamp": [
+          "#0a0a0b",
+          "#141416",
+          "#1c1c1f",
+          "#2a2a2d",
+          "#6e6e73",
+          "#85858b",
+          "#a1a1a6",
+          "#f4f4f5"
+        ]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Strong Rule",
+        "canonical": "#6e6e73",
+        "oklch": "oklch(54.0% 0.008 286.1)",
+        "source": "Inherited: design-system/tokens/primitives.css + themes.css (--trade-gray-500 / --trade-border-strong and --trade-text-disabled.)",
+        "tonalRamp": [
+          "#0a0a0b",
+          "#141416",
+          "#1c1c1f",
+          "#2a2a2d",
+          "#6e6e73",
+          "#85858b",
+          "#a1a1a6",
+          "#f4f4f5"
+        ]
+      },
+      "text-primary": {
+        "role": "neutral",
+        "displayName": "Paper White",
+        "canonical": "#f4f4f5",
+        "oklch": "oklch(96.7% 0.001 286.4)",
+        "source": "Inherited: design-system/tokens/primitives.css + themes.css (--trade-gray-50 / --trade-text-primary.)",
+        "tonalRamp": [
+          "#0a0a0b",
+          "#141416",
+          "#1c1c1f",
+          "#2a2a2d",
+          "#6e6e73",
+          "#85858b",
+          "#a1a1a6",
+          "#f4f4f5"
+        ]
+      },
+      "text-secondary": {
+        "role": "neutral",
+        "displayName": "Secondary Gray",
+        "canonical": "#a1a1a6",
+        "oklch": "oklch(71.1% 0.007 286.2)",
+        "source": "Inherited: design-system/tokens/primitives.css + themes.css (--trade-gray-400 / --trade-text-secondary.)",
+        "tonalRamp": [
+          "#0a0a0b",
+          "#141416",
+          "#1c1c1f",
+          "#2a2a2d",
+          "#6e6e73",
+          "#85858b",
+          "#a1a1a6",
+          "#f4f4f5"
+        ]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Muted Gray",
+        "canonical": "#85858b",
+        "oklch": "oklch(61.9% 0.009 286.1)",
+        "source": "Inherited: design-system/tokens/primitives.css + themes.css (--trade-gray-450 / --trade-text-muted.)",
+        "tonalRamp": [
+          "#0a0a0b",
+          "#141416",
+          "#1c1c1f",
+          "#2a2a2d",
+          "#6e6e73",
+          "#85858b",
+          "#a1a1a6",
+          "#f4f4f5"
+        ]
+      },
+      "accent-selected": {
+        "role": "primary",
+        "displayName": "Selection Wash",
+        "canonical": "rgba(46, 92, 255, 0.06)",
+        "source": "Inherited: design-system/tokens/themes.css (--trade-accent-selected.)",
+        "tonalRamp": [
+          "oklch(15.0% 0.246 265.9)",
+          "oklch(26.4% 0.246 265.9)",
+          "oklch(37.9% 0.246 265.9)",
+          "oklch(49.3% 0.246 265.9)",
+          "oklch(60.7% 0.246 265.9)",
+          "oklch(72.1% 0.246 265.9)",
+          "oklch(83.6% 0.246 265.9)",
+          "oklch(95.0% 0.246 265.9)"
+        ]
+      },
+      "info-tint": {
+        "role": "secondary",
+        "displayName": "Info Wash",
+        "canonical": "rgba(46, 92, 255, 0.12)",
+        "source": "Inherited: design-system/tokens/themes.css (--trade-info-tint.)",
+        "tonalRamp": [
+          "oklch(15.0% 0.246 265.9)",
+          "oklch(26.4% 0.246 265.9)",
+          "oklch(37.9% 0.246 265.9)",
+          "oklch(49.3% 0.246 265.9)",
+          "oklch(60.7% 0.246 265.9)",
+          "oklch(72.1% 0.246 265.9)",
+          "oklch(83.6% 0.246 265.9)",
+          "oklch(95.0% 0.246 265.9)"
+        ]
+      },
+      "focus-ring": {
+        "role": "primary",
+        "displayName": "Focus Halo",
+        "canonical": "rgba(46, 92, 255, 0.15)",
+        "source": "Inherited: design-system/tokens/themes.css (--trade-focus-ring.)",
+        "tonalRamp": [
+          "oklch(15.0% 0.246 265.9)",
+          "oklch(26.4% 0.246 265.9)",
+          "oklch(37.9% 0.246 265.9)",
+          "oklch(49.3% 0.246 265.9)",
+          "oklch(60.7% 0.246 265.9)",
+          "oklch(72.1% 0.246 265.9)",
+          "oklch(83.6% 0.246 265.9)",
+          "oklch(95.0% 0.246 265.9)"
+        ]
+      },
+      "hover-wash": {
+        "role": "neutral",
+        "displayName": "Hover Wash",
+        "canonical": "rgba(255, 255, 255, 0.04)",
+        "source": "Inherited: design-system/tokens/themes.css (--trade-hover-wash.)",
+        "tonalRamp": [
+          "#0a0a0b",
+          "#141416",
+          "#1c1c1f",
+          "#2a2a2d",
+          "#6e6e73",
+          "#85858b",
+          "#a1a1a6",
+          "#f4f4f5"
+        ]
+      },
+      "hover-wash-strong": {
+        "role": "neutral",
+        "displayName": "Strong Hover Wash",
+        "canonical": "rgba(255, 255, 255, 0.06)",
+        "source": "Inherited: design-system/tokens/themes.css (--trade-hover-wash-strong.)",
+        "tonalRamp": [
+          "#0a0a0b",
+          "#141416",
+          "#1c1c1f",
+          "#2a2a2d",
+          "#6e6e73",
+          "#85858b",
+          "#a1a1a6",
+          "#f4f4f5"
+        ]
+      },
+      "row-hover": {
+        "role": "neutral",
+        "displayName": "Row Hover",
+        "canonical": "rgba(255, 255, 255, 0.03)",
+        "source": "Inherited: design-system/tokens/themes.css (--trade-row-hover.)",
+        "tonalRamp": [
+          "#0a0a0b",
+          "#141416",
+          "#1c1c1f",
+          "#2a2a2d",
+          "#6e6e73",
+          "#85858b",
+          "#a1a1a6",
+          "#f4f4f5"
+        ]
+      },
+      "warning-tint": {
+        "role": "tertiary",
+        "displayName": "Amber Wash",
+        "canonical": "rgba(255, 186, 0, 0.12)",
+        "source": "Inherited: design-system/tokens/themes.css (--trade-warning-tint.)",
+        "tonalRamp": [
+          "oklch(15.0% 0.171 81.5)",
+          "oklch(26.4% 0.171 81.5)",
+          "oklch(37.9% 0.171 81.5)",
+          "oklch(49.3% 0.171 81.5)",
+          "oklch(60.7% 0.171 81.5)",
+          "oklch(72.1% 0.171 81.5)",
+          "oklch(83.6% 0.171 81.5)",
+          "oklch(95.0% 0.171 81.5)"
+        ]
+      },
+      "warning-border": {
+        "role": "tertiary",
+        "displayName": "Amber Rule",
+        "canonical": "rgba(255, 186, 0, 0.30)",
+        "source": "Inherited: design-system/tokens/themes.css (--trade-warning-border.)",
+        "tonalRamp": [
+          "oklch(15.0% 0.171 81.5)",
+          "oklch(26.4% 0.171 81.5)",
+          "oklch(37.9% 0.171 81.5)",
+          "oklch(49.3% 0.171 81.5)",
+          "oklch(60.7% 0.171 81.5)",
+          "oklch(72.1% 0.171 81.5)",
+          "oklch(83.6% 0.171 81.5)",
+          "oklch(95.0% 0.171 81.5)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page title (Overview, Transactions). --trade-type-h3-*."
+      },
+      "headline-compact": {
+        "displayName": "Headline Compact",
+        "purpose": "Page title below 768px. --trade-type-h4-*."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Panel titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Base body size."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Descriptions, summaries, empty states, search input."
+      },
+      "nav": {
+        "displayName": "Nav",
+        "purpose": "Header navigation pills; 700 when active."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Summary labels, chart readout dates, legend, footer, subtitles."
+      },
+      "label-strong": {
+        "displayName": "Label Strong",
+        "purpose": "Badges."
+      },
+      "label-micro": {
+        "displayName": "Label Micro",
+        "purpose": "Uppercase table column headers only (inherited .trade-table th)."
+      },
+      "data-hero": {
+        "displayName": "Data Hero",
+        "purpose": "Lead Volume figure in the ledger summary strip."
+      },
+      "data-lg": {
+        "displayName": "Data Large",
+        "purpose": "Other summary figures and the chart readout total."
+      },
+      "data": {
+        "displayName": "Data",
+        "purpose": "Table cells, amounts, hashes, addresses, ledger numbers, page numbers."
+      },
+      "data-micro": {
+        "displayName": "Data Micro",
+        "purpose": "Chart axis ticks and route-node metadata."
+      }
+    },
+    "shadows": [
+      {
+        "name": "control-lift",
+        "value": "0 1px 3px rgba(0, 0, 0, 0.30)",
+        "purpose": "Active segmented option only (--trade-control-shadow, inherited)."
+      },
+      {
+        "name": "focus-halo",
+        "value": "0 0 0 3px rgba(46, 92, 255, 0.15)",
+        "purpose": "Paired with outline: 1px solid #2e5cff; outline-offset: 2px on every :focus-visible element (design-system/tokens/base.css)."
+      },
+      {
+        "name": "mark-separator",
+        "value": "0 0 0 2px var(--trade-bg-surface)",
+        "purpose": "Separates the overlapping second asset mark in a pair mark (styles/shell.css)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "duration-hover",
+        "value": "150ms",
+        "purpose": "Hover color and background transitions (--trade-duration-hover, inherited)."
+      },
+      {
+        "name": "duration-control",
+        "value": "150ms",
+        "purpose": "Control and pending-dim release (--trade-duration-control, inherited)."
+      },
+      {
+        "name": "ease-standard",
+        "value": "ease",
+        "purpose": "Default easing (--trade-ease-standard, inherited)."
+      },
+      {
+        "name": "pending-dim",
+        "value": "opacity 0.5, 240ms ease, 150ms delay",
+        "purpose": "Dims stale data while a period, search, or page change streams in."
+      },
+      {
+        "name": "skeleton-shimmer",
+        "value": "trade-shimmer 1.4s linear infinite",
+        "purpose": "Loading skeletons (inherited)."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation and transition durations forced to 1ms",
+        "purpose": "prefers-reduced-motion: reduce (design-system/tokens/motion.css)."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "max-width: 47.9375rem (767px)"
+      },
+      {
+        "name": "tablet",
+        "value": "max-width: 63.9375rem (1023px)"
+      },
+      {
+        "name": "wide-table",
+        "value": "max-width: 79.9375rem (1279px); analytics-only, hides the account column"
+      },
+      {
+        "name": "content-max",
+        "value": "80rem (1280px) container"
+      }
+    ],
+    "provenance": {
+      "inherited": [
+        "design-system/ (byte-identical copy of lumix-front/design-system, 23 files)",
+        "Header rules mirrored from lumix-front/app/globals.css",
+        "Footer markup and rules copied verbatim from lumix-front/components/app-footer.tsx and lumix-front/app/globals.css"
+      ],
+      "analyticsAdditions": [
+        "styles/shell.css",
+        "styles/overview.css",
+        "styles/transactions.css"
+      ],
+      "rasters": [
+        {
+          "path": "app/icon.png",
+          "origin": "Derived (not generated) 64px favicon: design-system/assets/lumix-logo-icon-white.png composited white on a dark rounded square; origin embedded in file metadata."
+        },
+        {
+          "path": "design-system/assets/lumix-logo-type-white.png",
+          "origin": "Lumix brand asset, header wordmark (components/site-header.tsx)."
+        },
+        {
+          "path": "design-system/assets/lumix-logo-icon-white.png",
+          "origin": "Lumix brand asset, mobile header icon (components/site-header.tsx)."
+        },
+        {
+          "path": "public/tokens/{aqua,cetes,pyusd,shx,ustry,yxlm}.png, public/tokens/xlm.jpg",
+          "origin": "Copied unchanged from lumix-front/public/tokens/stellar/; ORIGIN note embedded in metadata."
+        },
+        {
+          "path": "public/tokens/{usdc,eurc}.svg",
+          "origin": "Copied unchanged (byte-identical) from lumix-front/public/tokens/stellar/; no embedded note."
+        }
+      ],
+      "imageGeneration": "None used.",
+      "favicon": "Exact lumix-front/app/icon.tsx transparent 38x38 generator, using the byte-identical existing white Lumix logo. Replaces the old dark tile."
+    },
+    "deliberateDecisions": [
+      "The user's minimal brief supersedes the prior audit-trail direction.",
+      "Inter Variable and the existing dark shell are preserved.",
+      "Source badges are intentionally removed for the fixture-based frontend review."
+    ]
+  },
+  "components": [
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary-sm",
+      "description": "Inherited secondary button used by Launch app and recovery actions.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">Launch app <svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M14 4h6v6\"/><path d=\"m20 4-9 9\"/><path d=\"M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6\"/></svg></a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0 12px; border: 1px solid var(--trade-border-default, #2a2a2d); border-radius: var(--trade-radius-md, 10px); background: var(--trade-bg-raised, #1c1c1f); color: var(--trade-text-primary, #f4f4f5); font: 500 0.75rem/1 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; text-decoration: none; transition: background 150ms ease, color 150ms ease; } .ds-btn-secondary svg { color: var(--trade-text-muted, #85858b); } .ds-btn-secondary:hover { background: var(--trade-secondary-hover, #222226); } .ds-btn-secondary:focus-visible { outline: 1px solid var(--trade-accent, #2e5cff); outline-offset: 2px; box-shadow: 0 0 0 3px var(--trade-focus-ring, rgba(46,92,255,0.15)); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost-sm",
+      "description": "Inherited trade-button--ghost at the small size; panel actions such as All transactions.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">All transactions <svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 12h15\"/><path d=\"m13.5 6.5 5.5 5.5-5.5 5.5\"/></svg></a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0 12px; border: 1px solid transparent; border-radius: var(--trade-radius-md, 10px); background: transparent; color: var(--trade-text-secondary, #a1a1a6); font: 500 0.75rem/1 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; text-decoration: none; transition: background 150ms ease, color 150ms ease; } .ds-btn-ghost:hover { background: var(--trade-hover-wash-strong, rgba(255,255,255,0.06)); color: var(--trade-text-primary, #f4f4f5); } .ds-btn-ghost:focus-visible { outline: 1px solid var(--trade-accent, #2e5cff); outline-offset: 2px; box-shadow: 0 0 0 3px var(--trade-focus-ring, rgba(46,92,255,0.15)); }"
+    },
+    {
+      "name": "Navigation Pills",
+      "kind": "nav",
+      "refersTo": "nav-pill",
+      "description": "Header navigation mirrored from lumix-front; the active pill follows the Blue Is Selection Rule.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Analytics navigation\"><a class=\"ds-nav-pill is-active\" href=\"#\" aria-current=\"page\">Overview</a><a class=\"ds-nav-pill\" href=\"#\">Transactions</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 8px; padding: 6px 0 14px; background: var(--trade-bg-canvas, #0a0a0b); } .ds-nav-pill { display: inline-flex; align-items: center; height: 32px; padding: 0 16px; border: 1px solid transparent; border-radius: 999px; color: var(--trade-text-secondary, #a1a1a6); font: 400 0.8125rem/1.4 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; letter-spacing: 0; text-decoration: none; transition: background 150ms ease, color 150ms ease; } .ds-nav-pill:hover { background: var(--trade-hover-wash, rgba(255,255,255,0.04)); color: var(--trade-text-primary, #f4f4f5); } .ds-nav-pill.is-active { border-color: var(--trade-accent, #2e5cff); background: var(--trade-accent-selected, rgba(46,92,255,0.06)); color: var(--trade-accent-text, #8fa6ff); font-weight: 700; } .ds-nav-pill.is-active:hover { background: var(--trade-accent-tint, #0f1730); } .ds-nav-pill:focus-visible { outline: 1px solid var(--trade-accent, #2e5cff); outline-offset: 2px; box-shadow: 0 0 0 3px var(--trade-focus-ring, rgba(46,92,255,0.15)); }"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "One labeled asset/pair search on Transactions. Enter submits and resets pagination.",
+      "html": "<form role=\"search\" action=\"/transactions\"><label for=\"swap-search\">Search swaps</label><input id=\"swap-search\" type=\"search\" name=\"q\" placeholder=\"Search swaps\"></form>",
+      "css": ".ds-search { display: flex; align-items: center; gap: 8px; width: 100%; max-width: 34rem; min-height: 36px; padding: 0 12px; border: 1px solid var(--trade-border-default, #2a2a2d); border-radius: var(--trade-radius-control, 12px); background: var(--trade-bg-raised, #1c1c1f); color: var(--trade-text-muted, #85858b); transition: border-color 150ms ease, box-shadow 150ms ease; } .ds-search input { flex: 1; min-width: 0; height: 34px; border: 0; outline: 0; background: transparent; color: var(--trade-text-primary, #f4f4f5); caret-color: var(--trade-accent-text, #8fa6ff); font: 400 0.875rem/1.5 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; } .ds-search input::placeholder { color: var(--trade-text-muted, #85858b); } .ds-search:focus-within { border-color: var(--trade-accent, #2e5cff); box-shadow: 0 0 0 3px var(--trade-focus-ring, rgba(46,92,255,0.15)); }"
+    },
+    {
+      "name": "Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Inherited trade-panel with the analytics panel header (title, subtitle, mono figure).",
+      "html": "<section class=\"ds-panel\"><div class=\"ds-panel-head\"><div><h2>Venues</h2><p>Share of routed volume. Every pool hop counts once.</p></div><span class=\"ds-panel-figure\">$4,812,330</span></div><div class=\"ds-venue\"><span>Soroswap</span><span class=\"ds-bar\"><span style=\"width:72%\"></span></span><span class=\"ds-num\">$1,904,220</span></div><div class=\"ds-venue\" data-path=\"stellar-amm\"><span>Stellar AMM</span><span class=\"ds-bar\"><span style=\"width:41%\"></span></span><span class=\"ds-num\">$1,088,410</span></div></section>",
+      "css": ".ds-panel { max-width: 32rem; padding: 20px; border: 1px solid var(--trade-border-subtle, #2a2a2d); border-radius: var(--trade-radius-panel, 16px); background: var(--trade-bg-surface, #141416); color: var(--trade-text-primary, #f4f4f5); font-family: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; } .ds-panel-head { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 16px; } .ds-panel-head h2 { margin: 0; font-size: 0.875rem; font-weight: 600; } .ds-panel-head p { margin: 4px 0 0; color: var(--trade-text-muted, #85858b); font-size: 0.75rem; } .ds-panel-figure, .ds-num { font-family: ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace; font-variant-numeric: tabular-nums slashed-zero; } .ds-panel-figure { font-size: 0.875rem; font-weight: 650; white-space: nowrap; } .ds-venue { display: grid; grid-template-columns: 7.5rem 1fr auto; align-items: center; gap: 12px; padding: 7px 0; font-size: 0.8125rem; } .ds-bar { display: block; height: 6px; overflow: hidden; border-radius: 999px; background: var(--trade-bg-raised, #1c1c1f); } .ds-bar > span { display: block; height: 100%; border-radius: inherit; background: var(--series-a, #2e5cff); } .ds-venue[data-path='stellar-amm'] .ds-bar > span { background: var(--series-b, #8fa6ff); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A quiet overview with details on demand",
+    "overview": "A 70/30 area-chart and metrics card with a floating divider, differentiated venue bar blues, strict UTC table dates, hover-only row backgrounds, and compact transaction disclosures with Mainnet explorer links.",
+    "keyCharacteristics": [
+      "Preserve the existing Lumix dark shell, palette, and fonts.",
+      "No timeframe selector, period query, chart axes, or gridlines.",
+      "Venue names and bars only, in two explicit groups.",
+      "Rich swap amounts, route summaries, values, hashes, and strict YYYY-MM-DD UTC dates, without a Status column.",
+      "Drawers show copyable Mainnet transaction hash, execution venue, protocol/hop summary, and transfer amounts; no trader account, ledger, or UTC timestamp sections."
+    ],
+    "rules": [
+      {
+        "name": "Preserve the Lumix world",
+        "body": "Keep the inherited palette, fonts, design-system package, header, and footer.",
+        "section": "direction"
+      },
+      {
+        "name": "Clean overall chart",
+        "body": "7:3 chart/metrics split, a blue stroke with 24%-to-transparent area fill, and a floating vertical hairline. No visible axes, ticks, gridlines, period controls, or legend.",
+        "section": "charts"
+      },
+      {
+        "name": "Grouped venues, bars only",
+        "body": "Five aggregator venues and two Stellar AMM venues. No dollar amounts or percentages.",
+        "section": "components"
+      },
+      {
+        "name": "Details on demand",
+        "body": "Rich summary rows, no Status column. Native accessible disclosures for the requested on-chain facts.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Use inherited --trade-* tokens.",
+      "Keep the footer risk disclaimer verbatim.",
+      "Keep search and pagination usable by keyboard and on mobile."
+    ],
+    "donts": [
+      "Do not restore timeframe controls, advanced filters, source badges, chart metric switches, or a Status column.",
+      "Do not change Inter to satisfy the generic font detector.",
+      "Do not imply fixture data is a verified live integration."
+    ]
+  }
+}
