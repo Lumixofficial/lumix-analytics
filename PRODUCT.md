@@ -28,7 +28,7 @@ A compact, read-only view of Lumix spot traction: overall volume, total swaps, a
 - Venues shows API-provided Soroswap and Aquarius bars in Lumix aggregator, plus Phoenix, Sushi, and Comet with muted "Coming soon" tags instead of bars. Stellar AMM shows only Order book. Unattributed and Liquidity pools are excluded. Active bars retain their API `sharePct` without renormalizing; Stellar AMM uses the lighter Instrument Blue. No visible dollar amounts or percentages.
 - Top pairs and its API request are removed. Total users is not displayed.
 - Latest swaps has Swap (both icons, amounts and symbols), Route (execution venue and the API's `routeSummary`), USD Value, and UTC Time in strict `YYYY-MM-DD` format.
-- Transactions loads 20 records per page with Previous/Next navigation and current page / total pages. Its table also includes a truncated transaction hash. The backend has no search parameter, so no local-only search is offered.
+- Transactions loads 10 records per page with Previous/Next navigation and current page / total pages. Its table also includes a truncated transaction hash. The backend has no search parameter, so no local-only search is offered.
 - Neither table has a Status column. Clicking a row or its keyboard-accessible toggle opens a copyable transaction hash linked to Mainnet Stellar Expert, execution venue, the API's protocol summary, and transfer amounts. Trader account, ledger, and UTC timestamp sections are intentionally absent. Drawers end after this summary: no individual routes, legs, splits, intermediate tokens, or per-hop amounts. Do not infer routes, hops, or status fields absent from the response.
 - Table highlights apply only on hover, never persist because a row is open. Keep 32px desktop and 24px mobile content insets from card edges.
 - Preserve the Lumix header, footer, brand typography, palette, and design-system package.
@@ -47,7 +47,7 @@ Server Components make uncached requests directly to:
 - `/v1/analytics/chart?interval=1d` (API-provided cumulative volume)
 - `/v1/analytics/venues`
 - `/v1/analytics/transactions?page=1&limit=5&sort=-timestamp` on Overview
-- `/v1/analytics/transactions?page={currentPage}&limit=20&sort=-timestamp` on Transactions
+- `/v1/analytics/transactions?page={currentPage}&limit=10&sort=-timestamp` on Transactions
 
 Widget responses are top-level objects. Transactions alone uses the `data` / `page` envelope. Decimal amount and USD strings are display quantities, not raw atomic token amounts. Unpriced transactions retain `valueUsd: null`, displayed as a dash rather than zero.
 

@@ -19,7 +19,7 @@ LOWER GRID: Venues on the left takes 70% and Metrics on the right takes 30%, wit
 
 VENUES: Lumix aggregator shows API-provided Soroswap and Aquarius bars plus Phoenix, Sushi, and Comet with muted "Coming soon" tags and no bars. Stellar AMM shows only the API's Order book row. Exclude Unattributed, Liquidity pools, and other categories. Active bars retain their original `sharePct`, without renormalization. Aggregator bars use Poly Blue; Stellar AMM uses lighter Instrument Blue. No visible dollar amounts or percentages.
 
-TABLES: Latest swaps has both token icons, formatted decimal-string amounts and API symbols, Route with the API's venue and `routeSummary`, USD Value (dash when null), and strict `YYYY-MM-DD` UTC Time. Transactions adds a truncated transaction hash and API-driven 20-row pagination with current page / total pages. The backend has no search parameter; do not add local-only filtering. Neither table shows a Status column.
+TABLES: Latest swaps has both token icons, formatted decimal-string amounts and API symbols, Route with the API's venue and `routeSummary`, USD Value (dash when null), and strict `YYYY-MM-DD` UTC Time. Transactions adds a truncated transaction hash and API-driven 10-row pagination with current page / total pages. The backend has no search parameter; do not add local-only filtering. Neither table shows a Status column.
 
 DISCLOSURE: Clicking a row or its native button toggles transaction details below that row. Show a full copyable hash linked to Mainnet Stellar Expert in a new tab, execution venue (Lumix Aggregator or Stellar AMM), the API's protocol summary, and token transfer amounts. Do not show trader account, ledger, or UTC timestamp sections. End the drawer directly after the route summary. Do not render individual legs, splits, intermediate tokens, or per-hop amounts. Do not infer status or routes absent from the completed-transactions response. Do not add fees, slippage, or advanced filters. Row highlights are hover-only. Maintain 32px desktop / 24px mobile content insets.
 
@@ -33,4 +33,4 @@ STATES: Responsive mobile rows retain all fields. Hashes wrap. Loading matches t
 
 ## Data contract
 
-`lib/api.ts` reads `NEXT_PUBLIC_API_URL` and calls only the live summary, chart (`interval=1d`), venues, and transactions endpoints under `/v1/analytics`. The three widget responses are top-level objects. Transactions returns `data` and `page`, with `limit=5` for Overview and `limit=20` for Transactions, sorted by `-timestamp`. No generated analytic data is included.
+`lib/api.ts` reads `NEXT_PUBLIC_API_URL` and calls only the live summary, chart (`interval=1d`), venues, and transactions endpoints under `/v1/analytics`. The three widget responses are top-level objects. Transactions returns `data` and `page`, with `limit=5` for Overview and `limit=10` for Transactions, sorted by `-timestamp`. No generated analytic data is included.

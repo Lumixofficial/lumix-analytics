@@ -226,7 +226,7 @@ Active venue bars reveal from left to right on mount over 1400ms with the chart'
 
 ## Shared swap tables
 
-Overview columns: Swap, Route, Value, Time. Transactions adds Transaction (truncated hash), 20 rows per page, and Previous/Next pagination with current page / total pages. The live API does not support search, so the old local-only search is removed. Neither table has a Status column.
+Overview columns: Swap, Route, Value, Time. Transactions adds Transaction (truncated hash), 10 rows per page, and Previous/Next pagination with current page / total pages. The live API does not support search, so the old local-only search is removed. Neither table has a Status column.
 
 Swap contains both asset icons, formatted decimal-string amounts, and API asset symbols joined by the authored arrow icon. Route shows Aggregator or Stellar AMM from `venue`, plus the API's `routeSummary` in smaller muted text. Do not infer protocol names or hop counts. Value is USD, with a dash for an unpriced transaction, and Time uses strict UTC calendar dates in `YYYY-MM-DD` format.
 
@@ -238,7 +238,7 @@ The detail region contains a full copyable transaction hash linking to Mainnet S
 
 Below 1024px, breakdown panels stack. Below 768px, swap rows become compact multi-line layouts while retaining all fields, including token icons and transaction hash. Detail facts become a single column. Pagination arrows, row toggles, and copy controls have 44px mobile targets.
 
-Use semantic headings, tables, visible keyboard focus, copy announcements, and reduced-motion support. Subtle pulse skeletons match the full-width chart, lower Venues/Metrics cards, and five-column, 20-row transaction table. They also replace pending transaction-page results during pagination. Zero metrics stay zero. An empty chart has a quiet blue baseline without generated points. Empty transaction tables have a placeholder row saying "No transactions recorded yet."
+Use semantic headings, tables, visible keyboard focus, copy announcements, and reduced-motion support. Subtle pulse skeletons match the full-width chart, lower Venues/Metrics cards, and five-column, 10-row transaction table. They also replace pending transaction-page results during pagination. Zero metrics stay zero. An empty chart has a quiet blue baseline without generated points. Empty transaction tables have a placeholder row saying "No transactions recorded yet."
 
 Every displayed analytic comes from an uncached request through `lib/api.ts` to the live modular `/v1/analytics/*` endpoints. `NEXT_PUBLIC_API_URL` selects the backend. Widget responses are top-level objects; transactions retain their `data` / `page` envelope. Failed requests show an explicit retryable error instead of invented data or zero totals.
 

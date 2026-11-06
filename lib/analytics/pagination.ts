@@ -1,4 +1,4 @@
-export const TRANSACTIONS_PAGE_SIZE = 20;
+export const TRANSACTIONS_PAGE_SIZE = 10;
 export const MAX_TRANSACTION_PAGE = 100_000;
 
 export function parsePage(value: string | string[] | undefined) {
