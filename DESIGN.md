@@ -206,7 +206,7 @@ Analytics-specific CSS stays in `styles/shell.css`, `styles/overview.css`, and `
 
 Use the inherited neutral ladder: Canvas `#0a0a0b`, Surface `#141416`, Raised `#1c1c1f`, Hairline `#2a2a2d`. Primary text is `#f4f4f5`, secondary `#a1a1a6`, muted `#85858b`. Poly Blue `#2e5cff` draws the area-chart stroke and aggregator venue bars. Its area fill fades vertically from 24% opacity to transparent. Instrument Blue `#8fa6ff` distinguishes Stellar AMM venue bars and remains selected-navigation text and focus/caret color.
 
-Inter Variable for words. Use the inherited tabular mono stack for money, quantities, counts, hashes, accounts, and pagination. The main volume is 2rem on desktop, 1.125rem on compact layouts; supporting totals are 1.375rem and 1.125rem respectively.
+Inter Variable for words. Use the inherited tabular mono stack for money, quantities, counts, hashes, accounts, and pagination. Both summary totals are 2rem on desktop and 1.75rem on compact layouts.
 
 Panels retain 16px corners and one hairline, without shadows. Controls use inherited radii, focus rings, hover treatments, and 44px mobile targets. Do not replace Inter because of a generic overused-font warning.
 
@@ -214,13 +214,15 @@ Panels retain 16px corners and one hairline, without shadows. Controls use inher
 
 The page has a bare title without timeframe selection or period query logic. The general overall dataset supplies all metrics.
 
-The top card is a 7:3 grid: a smooth blue area chart on the left, three vertically spaced metrics on the right (Total volume, Total swaps, Total users). No visible dollar/date ticks, axes, gridlines, metric switches, or legend. A 1px separator floats at 75% of the metric column height, centered vertically and clear of the card edges. Curve control points stay between actual endpoints. A visually hidden table provides equivalent overall-volume data. The line and gradient share a 1400ms left-to-right clip-path entrance on mount, disabled for reduced motion.
+The top card contains only a full-width smooth blue area chart. No visible dollar/date ticks, axes, gridlines, metric switches, or legend. Curve control points stay between actual endpoints. A visually hidden table provides equivalent overall-volume data. The line and gradient share a 1400ms left-to-right clip-path entrance on mount, disabled for reduced motion.
 
-On mobile the card retains chart-left / vertical-metrics-right, with narrower proportions and smaller data type to avoid overflow.
+The lower section has a 70/30 Venues/Metrics split from 1024px upward, stretching the cards to the same height. Stack both cards on mobile and tablet. Metrics contains Total volume and Total swaps in two evenly spaced rows with large tabular numbers, clear labels, and a subtle separator. Total users is not displayed. Long numbers wrap without overflowing.
 
-Venues has two groups: Lumix aggregator (Soroswap, Aquarius, Phoenix, Sushi, Comet) and Stellar AMM (Liquidity pools, Order book). Render the API's protocol arrays, including any additional categories it returns. A row is a venue name on the left and a thin blue bar on the right. Each bar uses its protocol's `sharePct` directly, not normalization against the largest venue. There are no visible dollar amounts, percentages, group totals, or extra descriptions.
+Venues has two groups: Lumix aggregator shows API-provided Soroswap and Aquarius with thin blue bars; Phoenix, Sushi, and Comet have muted "Coming soon" tags and no bars. Stellar AMM shows only the API's Order book row. Exclude Unattributed, Liquidity pools, and other categories from this curated list. Each active bar uses its protocol's `sharePct` directly, not normalization against the largest visible venue. There are no visible dollar amounts, percentages, group totals, or extra descriptions.
 
-Top pairs shows five Pair/Volume entries. Its table does not flex-grow: keep the column headers directly beneath the title with a 12px gap, rather than distributing spare card height into the table header. Latest swaps shows five rich, expandable rows.
+Top pairs, its component, and its API request are removed. Latest swaps shows five rich, expandable rows.
+
+Active venue bars reveal from left to right on mount over 1400ms with the chart's easing. Animate `scaleX` from zero to one around the left edge, preserving the API-derived width. Stable venue keys prevent replay on data updates. Reduced-motion users see the final bars immediately.
 
 ## Shared swap tables
 
@@ -234,9 +236,9 @@ The detail region contains a full copyable transaction hash linking to Mainnet S
 
 ## Responsive behavior and states
 
-Below 768px, breakdown panels stack. Swap rows become compact multi-line layouts while retaining all fields, including token icons and transaction hash. Detail facts become a single column. Pagination arrows, row toggles, and copy controls have 44px mobile targets.
+Below 1024px, breakdown panels stack. Below 768px, swap rows become compact multi-line layouts while retaining all fields, including token icons and transaction hash. Detail facts become a single column. Pagination arrows, row toggles, and copy controls have 44px mobile targets.
 
-Use semantic headings, tables, visible keyboard focus, copy announcements, and reduced-motion support. Subtle pulse skeletons match the chart/metrics split and five-column, 20-row transaction table. They also replace pending transaction-page results during pagination. Zero metrics stay zero. An empty chart has a quiet blue baseline without generated points. Empty pairs and transaction tables have a placeholder row saying "No transactions recorded yet."
+Use semantic headings, tables, visible keyboard focus, copy announcements, and reduced-motion support. Subtle pulse skeletons match the full-width chart, lower Venues/Metrics cards, and five-column, 20-row transaction table. They also replace pending transaction-page results during pagination. Zero metrics stay zero. An empty chart has a quiet blue baseline without generated points. Empty transaction tables have a placeholder row saying "No transactions recorded yet."
 
 Every displayed analytic comes from an uncached request through `lib/api.ts` to the live modular `/v1/analytics/*` endpoints. `NEXT_PUBLIC_API_URL` selects the backend. Widget responses are top-level objects; transactions retain their `data` / `page` envelope. Failed requests show an explicit retryable error instead of invented data or zero totals.
 

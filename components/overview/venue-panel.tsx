@@ -1,9 +1,22 @@
 import type { VenuesData } from "@/lib/analytics/types";
 
+const UPCOMING_VENUES = ["Phoenix", "Sushi", "Comet"];
+
 export function VenuePanel({ venues }: { venues: VenuesData }) {
   const groups = [
-    { label: "Lumix aggregator", path: "aggregator", protocols: venues.aggregator.protocols },
-    { label: "Stellar AMM", path: "stellar-amm", protocols: venues.stellarAmm.protocols },
+    {
+      label: "Lumix aggregator",
+      path: "aggregator",
+      protocols: venues.aggregator.protocols.filter(({ name }) =>
+        ["soroswap", "aquarius"].includes(name.trim().toLowerCase())),
+      upcoming: UPCOMING_VENUES,
+    },
+    {
+      label: "Stellar AMM",
+      path: "stellar-amm",
+      protocols: venues.stellarAmm.protocols.filter(({ name }) => name.trim().toLowerCase() === "order book"),
+      upcoming: [],
+    },
   ];
 
   return (
@@ -21,6 +34,12 @@ export function VenuePanel({ venues }: { venues: VenuesData }) {
                 <span className="venue-bar" aria-hidden="true">
                   <span style={{ width: `${Math.min(100, Math.max(0, protocol.sharePct))}%` }} />
                 </span>
+              </li>
+            ))}
+            {group.upcoming.map((name) => (
+              <li key={name} className="venue-upcoming">
+                <span>{name}</span>
+                <span className="venue-coming-soon">Coming soon</span>
               </li>
             ))}
           </ul>

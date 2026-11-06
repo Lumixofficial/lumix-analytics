@@ -2,7 +2,6 @@ import { TRANSACTIONS_PAGE_SIZE } from "./analytics/pagination";
 import type {
   AnalyticsSummary,
   ChartData,
-  TopPairsData,
   TransactionItem,
   TransactionsResponse,
   VenuesData,
@@ -35,11 +34,6 @@ function isVenueGroup(value: unknown): value is VenuesData["aggregator"] {
 
 const isVenues: Validator<VenuesData> = (value): value is VenuesData =>
   isObject(value) && isVenueGroup(value.aggregator) && isVenueGroup(value.stellarAmm);
-
-const isTopPairs: Validator<TopPairsData> = (value): value is TopPairsData =>
-  isObject(value) && Array.isArray(value.pairs) && value.pairs.every((pair: unknown) =>
-    isObject(pair) && typeof pair.pair === "string" && typeof pair.assetIn === "string" &&
-    typeof pair.assetOut === "string" && isDecimal(pair.volumeUsd) && isCount(pair.swaps));
 
 function isAsset(value: unknown): value is TransactionItem["assetIn"] {
   return isObject(value) && typeof value.id === "string" && typeof value.symbol === "string" &&
@@ -79,7 +73,6 @@ async function read<T>(path: string, validate: Validator<T>): Promise<T> {
 export const getAnalyticsSummary = () => read("/summary", isSummary);
 export const getChartData = () => read("/chart?interval=1d", isChart);
 export const getVenuesData = () => read("/venues", isVenues);
-export const getTopPairsData = () => read("/top-pairs?limit=5", isTopPairs);
 
 export function getTransactions(page = 1, limit = TRANSACTIONS_PAGE_SIZE) {
   const params = new URLSearchParams({ page: String(page), limit: String(limit), sort: "-timestamp" });

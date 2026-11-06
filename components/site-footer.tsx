@@ -41,9 +41,9 @@ function DiscordMark() {
 }
 
 const socialLinks = [
-  { label: "GitHub", icon: <GitHubMark /> },
-  { label: "X", icon: <XMark /> },
-  { label: "Discord", icon: <DiscordMark /> },
+  { label: "GitHub", href: "https://github.com/Lumixofficial", external: true, icon: <GitHubMark /> },
+  { label: "X", href: "#", external: false, icon: <XMark /> },
+  { label: "Discord", href: "#", external: false, icon: <DiscordMark /> },
 ] as const;
 
 const footerLinks: { label: string; href: string; external?: boolean }[] = [
@@ -64,7 +64,14 @@ export function SiteFooter() {
 
           <nav className="app-footer-socials" aria-label="Lumix social links">
             {socialLinks.map((link) => (
-              <a className="app-footer-social" href="#" aria-label={link.label} title={link.label} key={link.label}>
+              <a
+                className="app-footer-social"
+                href={link.href}
+                aria-label={link.label}
+                title={link.label}
+                key={link.label}
+                {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              >
                 {link.icon}
               </a>
             ))}

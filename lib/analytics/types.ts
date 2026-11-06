@@ -24,16 +24,6 @@ export interface VenuesData {
   };
 }
 
-export interface TopPairsData {
-  pairs: {
-    pair: string;
-    assetIn: string;
-    assetOut: string;
-    volumeUsd: string;
-    swaps: number;
-  }[];
-}
-
 export interface TransactionItem {
   id: string;
   txHash: string;
