@@ -1,0 +1,27 @@
+# Apply to ../api/docker-compose.yml, from this repository. Requires Compose 2.24.4+.
+# Keeps the existing Mongo data volume; does not recreate or erase its contents.
+services:
+  mongo-lumix:
+    command: ["mongod", "--auth", "--wiredTigerCacheSizeGB", "0.25", "--bind_ip_all", "--slowms", "2147483647"]
+    ports: !reset []
+    networks: !override [database]
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: lumix_root
+      MONGO_INITDB_ROOT_PASSWORD_FILE: /run/secrets/mongo_root_password
+    secrets: [mongo_root_password, mongo_app_password, mongo_api_password]
+    volumes:
+      - ${LUMIX_ANALYTICS_DEPLOY_DIR:?Set absolute analytics directory}/deploy/mongo-bootstrap.cjs:/run/lumix/mongo-bootstrap.cjs:ro
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "const a=db.getSiblingDB('admin'); a.auth('lumix_root',require('fs').readFileSync('/run/secrets/mongo_root_password','utf8').trim()); quit(a.runCommand({ping:1}).ok===1?0:1)"]
+  api:
+    environment:
+      MONGODB_URI: ${LUMIX_API_MONGODB_URI:?Set authenticated API URI in private compose.env}
+    networks: [lumix, database]
+networks:
+  database:
+    name: lumix-database
+    internal: true
+secrets:
+  mongo_root_password: { file: "${LUMIX_ANALYTICS_DEPLOY_DIR}/.local/visitors-production/mongo-root-password" }
+  mongo_app_password: { file: "${LUMIX_ANALYTICS_DEPLOY_DIR}/.local/visitors-production/mongo-app-password" }
+  mongo_api_password: { file: "${LUMIX_ANALYTICS_DEPLOY_DIR}/.local/visitors-production/mongo-api-password" }

@@ -1,0 +1,62 @@
+name: lumix-visitors-test
+services:
+  mongo:
+    image: mongo:7.0
+    command: ["mongod", "--auth", "--bind_ip_all", "--wiredTigerCacheSizeGB", "0.25", "--slowms", "2147483647"]
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: lumix_root
+      MONGO_INITDB_ROOT_PASSWORD_FILE: /run/secrets/mongo_root_password
+    secrets: [mongo_root_password, mongo_app_password]
+    volumes:
+      - visitor_test_mongo:/data/db
+      - ./deploy/mongo-test-init.cjs:/docker-entrypoint-initdb.d/20-visitors.js:ro
+      - ./deploy/reset-test.cjs:/run/lumix/reset-test.cjs:ro
+    networks: [database]
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "const a=db.getSiblingDB('admin'); a.auth('lumix_root',require('fs').readFileSync('/run/secrets/mongo_root_password','utf8').trim()); quit(a.runCommand({ping:1}).ok===1?0:1)"]
+      interval: 3s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+  analytics:
+    image: lumix-analytics:visitors-test
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_API_URL: ${VISITOR_TEST_API_URL:-http://host.docker.internal:8080}
+    environment:
+      VISITOR_ANALYTICS_ENABLED: "true"
+      VISITOR_ANALYTICS_DATASET: test
+      VISITOR_ANALYTICS_MODE: local-test
+      VISITOR_ANALYTICS_ORIGIN: http://localhost:3404
+      VISITOR_ANALYTICS_MONGODB_URI_FILE: /run/secrets/visitor_mongo_uri
+      VISITOR_ANALYTICS_RETENTION_DAYS: "30"
+      VISITOR_ANALYTICS_UNIQUES_ENABLED: "true"
+      VISITOR_ANALYTICS_TRUST_PROXY: "true"
+      VISITOR_ADMIN_USERNAME: admin
+      VISITOR_ADMIN_PASSWORD_HASH_FILE: /run/secrets/visitor_admin_hash
+    secrets: [visitor_mongo_uri, visitor_admin_hash]
+    networks: [database, frontend]
+    depends_on:
+      mongo: { condition: service_healthy }
+    restart: unless-stopped
+  web:
+    image: node:22-alpine
+    command: ["node", "/run/lumix/local-proxy.cjs"]
+    volumes:
+      - ./deploy/local-proxy.cjs:/run/lumix/local-proxy.cjs:ro
+    ports: ["127.0.0.1:3404:8080"]
+    networks: [frontend]
+    depends_on: [analytics]
+    restart: unless-stopped
+networks:
+  database: { internal: true }
+  frontend: {}
+volumes:
+  visitor_test_mongo:
+    labels: { lumix.visitors.dataset: test }
+secrets:
+  mongo_root_password: { file: ./.local/visitors-test/mongo-root-password }
+  mongo_app_password: { file: ./.local/visitors-test/mongo-app-password }
+  visitor_mongo_uri: { file: ./.local/visitors-test/visitor-mongo-uri }
+  visitor_admin_hash: { file: ./.local/visitors-test/admin-password-hash }

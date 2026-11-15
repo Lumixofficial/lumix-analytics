@@ -10,5 +10,10 @@ export default defineConfig([
     // ImageResponse renders an image, not a browser DOM with next/image support.
     rules: { "@next/next/no-img-element": "off" },
   },
-  globalIgnores([".next/**", "out/**", "next-env.d.ts", "design-system/**"]),
+  {
+    files: ["tests/**/*.cjs", "deploy/**/*.cjs"],
+    // Node's built-in test runner loads TypeScript through the local CJS hook.
+    rules: { "@typescript-eslint/no-require-imports": "off" },
+  },
+  globalIgnores([".next/**", ".local/**", "out/**", "next-env.d.ts", "design-system/**"]),
 ]);

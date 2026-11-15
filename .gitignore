@@ -8,3 +8,4 @@ out/
 tsconfig.tsbuildinfo
 .impeccable/review/
 .impeccable/reference/
+.local/

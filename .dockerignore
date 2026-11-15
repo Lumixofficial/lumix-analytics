@@ -3,6 +3,7 @@
 .git
 .gitignore
 .impeccable
+.local
 .env
 .env.*
 *.log

@@ -374,6 +374,50 @@ code {
   gap: var(--trade-space-2);
 }
 
+/* Privacy information uses the existing shell and control styles. */
+.privacy-copy {
+  max-width: 72ch;
+  color: var(--trade-text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.privacy-copy section {
+  margin-top: var(--trade-space-8);
+}
+
+.privacy-copy h2 {
+  margin-bottom: var(--trade-space-3);
+  color: var(--trade-text-primary);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.privacy-copy p + p {
+  margin-top: var(--trade-space-3);
+}
+
+.privacy-copy a {
+  color: var(--trade-accent-text);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.privacy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--trade-space-3);
+  margin-block: var(--trade-space-4);
+}
+
+.privacy-actions .trade-button {
+  min-height: 44px;
+  height: auto;
+  padding-block: var(--trade-space-2);
+  white-space: normal;
+}
+
 .skeleton-line {
   display: block;
   height: 0.75rem;

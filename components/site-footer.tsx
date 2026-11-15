@@ -48,7 +48,7 @@ const socialLinks = [
 
 const footerLinks: { label: string; href: string; external?: boolean }[] = [
   { label: "Terms", href: "#" },
-  { label: "Privacy", href: "#" },
+  { label: "Privacy", href: "/privacy" },
   { label: "Docs / How it works", href: "https://docs.lumixmarket.com/", external: true },
 ];
 

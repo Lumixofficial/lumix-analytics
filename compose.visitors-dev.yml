@@ -1,0 +1,8 @@
+# Host Next dev connects to the SAME authenticated test Mongo and named volume.
+# This override is only needed for native development, never production.
+services:
+  mongo:
+    ports: ["127.0.0.1:27029:27017"]
+    networks: [database, hostdev]
+networks:
+  hostdev: {}
