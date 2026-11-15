@@ -8,7 +8,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: lumix_root
       MONGO_INITDB_ROOT_PASSWORD_FILE: /run/secrets/mongo_root_password
-    secrets: [mongo_root_password, mongo_app_password, mongo_api_password]
+    secrets: [mongo_root_password, mongo_api_password]
     volumes:
       - ${LUMIX_ANALYTICS_DEPLOY_DIR:?Set absolute analytics directory}/deploy/mongo-bootstrap.cjs:/run/lumix/mongo-bootstrap.cjs:ro
     healthcheck:
@@ -22,6 +22,5 @@ networks:
     name: lumix-database
     internal: true
 secrets:
-  mongo_root_password: { file: "${LUMIX_ANALYTICS_DEPLOY_DIR}/.local/visitors-production/mongo-root-password" }
-  mongo_app_password: { file: "${LUMIX_ANALYTICS_DEPLOY_DIR}/.local/visitors-production/mongo-app-password" }
-  mongo_api_password: { file: "${LUMIX_ANALYTICS_DEPLOY_DIR}/.local/visitors-production/mongo-api-password" }
+  mongo_root_password: { file: "${LUMIX_ANALYTICS_DEPLOY_DIR}/.local/database/mongo-root-password" }
+  mongo_api_password: { file: "${LUMIX_ANALYTICS_DEPLOY_DIR}/.local/database/mongo-api-password" }

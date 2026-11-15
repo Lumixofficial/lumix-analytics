@@ -1,6 +1,5 @@
-# Secure the shared Mongo service first with deploy/mongo-secure.compose.yml.
-# See docs/visitor-analytics.md. The private lumix-database network and secret
-# files are required; this deployment does not fall back to unauthenticated Mongo.
+# Start the existing API stack first; it owns the shared lumix-network.
+# Retain its Mongo security overlay where applied (see deploy/README.md).
 # .env supplies NEXT_PUBLIC_API_URL to the build (Compose interpolation) and the
 # runtime environment. The URL is inlined at build time, so changes need --build.
 services:
@@ -14,26 +13,13 @@ services:
         NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:?Set NEXT_PUBLIC_API_URL in .env}
     env_file:
       - .env
-    environment:
-      VISITOR_ANALYTICS_MONGODB_URI_FILE: /run/secrets/visitor_mongo_uri
-      VISITOR_ADMIN_USERNAME: admin
-      VISITOR_ADMIN_PASSWORD_HASH_FILE: /run/secrets/visitor_admin_hash
-    secrets: [visitor_mongo_uri, visitor_admin_hash]
     ports:
       - "127.0.0.1:3004:3000"
     restart: unless-stopped
     networks:
       - lumix
-      - database
 
 networks:
   lumix:
     name: lumix-network
     external: true
-  database:
-    name: lumix-database
-    external: true
-
-secrets:
-  visitor_mongo_uri: { file: ./.local/visitors-production/visitor-mongo-uri }
-  visitor_admin_hash: { file: ./.local/visitors-production/admin-password-hash }

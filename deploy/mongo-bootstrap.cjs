@@ -12,7 +12,6 @@ try {
 }
 for (const entry of [
   { name: "lumix", user: "lumix_api", file: "mongo_api_password" },
-  { name: "lumix_visitors", user: "lumix_visitors", file: "mongo_app_password" },
 ]) {
   const target = db.getSiblingDB(entry.name);
   if (!target.getUser(entry.user)) target.createUser({ user: entry.user,

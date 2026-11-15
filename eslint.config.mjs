@@ -11,8 +11,8 @@ export default defineConfig([
     rules: { "@next/next/no-img-element": "off" },
   },
   {
-    files: ["tests/**/*.cjs", "deploy/**/*.cjs"],
-    // Node's built-in test runner loads TypeScript through the local CJS hook.
+    files: ["deploy/**/*.cjs"],
+    // Mongo's provisioning script runs in mongosh, which exposes CommonJS require.
     rules: { "@typescript-eslint/no-require-imports": "off" },
   },
   globalIgnores([".next/**", ".local/**", "out/**", "next-env.d.ts", "design-system/**"]),

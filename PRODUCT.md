@@ -20,7 +20,7 @@ A compact, read-only view of Lumix spot traction: overall volume, total swaps, a
 
 ## Capabilities and Constraints
 
-- Two public analytics pages, Overview and Transactions, in the existing Lumix dark style, plus privacy information and objection controls at `/privacy`. A separate authenticated visitor-statistics dashboard lives at `/admin/visitors`; it never mixes visitor metrics with verified Mainnet swap data.
+- Exactly two pages, Overview and Transactions, in the existing Lumix dark style.
 - Overview has no timeframe selector or period query logic. It displays the general overall dataset.
 - The top card contains a full-width smooth blue area chart (24% opacity fading to transparent). No visible axes, dates, dollar ticks, gridlines, switches, or legend.
 - The chart line and gradient reveal together from left to right over 1400ms on page entry. Reduced-motion users see the complete chart immediately.
